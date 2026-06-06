@@ -1,0 +1,7 @@
+__pycache__/
+*.npy
+*.keras
+*.csv
+*.pkl
+processed_data/
+models/
