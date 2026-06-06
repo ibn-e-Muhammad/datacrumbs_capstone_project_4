@@ -5,6 +5,42 @@
 This is an append-only development log and project report. All configurations, execution steps, and decisions will be documented chronologically.
 
 ---
+## Project Setup & Usage Instructions
+
+### Dataset
+- **Source:** [California Housing Prices Dataset](https://www.kaggle.com/datasets/camnugent/california-housing-prices/data)
+- Download `housing.csv` from the link above and place it in the root directory of this project before running the scripts.
+
+### Requirements
+This project requires Python 3.10+ and the following libraries:
+```bash
+pip install pandas numpy scikit-learn tensorflow
+```
+
+### Execution Order
+Navigate to the `src/` directory and execute the scripts in the following order:
+1. **Data Preprocessing:**
+   ```bash
+   python data_preprocessing.py
+   ```
+   *(Processes `housing.csv` and saves arrays/scalers to `processed_data/`)*
+2. **Model Architecture:**
+   ```bash
+   python model_architecture.py
+   ```
+   *(Defines the ANN structure and saves it to `models/`)*
+3. **Training:**
+   ```bash
+   python train.py
+   ```
+   *(Trains the model on CPU and saves the trained weights and history)*
+4. **Evaluation:**
+   ```bash
+   python evaluate.py
+   ```
+   *(Calculates final MAE, MSE, and RÂ² score on the test set)*
+
+---
 ## Phase 1: Planning & Setup
 **Timestamp:** 2026-06-06
 
@@ -151,7 +187,7 @@ Evaluated on the unseen `X_test` dataset (20% of original dataset).
 
 - **Mean Absolute Error (MAE):** 49183.29
 - **Mean Squared Error (MSE):** 4700559332.83
-- **R² Score:** 0.6413
+- **RÂ² Score:** 0.6413
 
 ### Analytical Summary
-The Artificial Neural Network achieved solid performance on the California Housing dataset. The **R² score of 0.6413** indicates that approximately 64.13% of the variance in the median house value can be explained by our model's features. This signifies a strong predictive relationship between the input demographic/geographic features and house prices. Additionally, the **MAE of 49183.29** tells us that on average, the model's predicted median house value is off by roughly this dollar amount from the actual value. Given that California house prices commonly range in the hundreds of thousands, this error margin provides a practical understanding of the model's day-to-day prediction accuracy. Overall, the network successfully learned the underlying patterns and generalized well to unseen data without extreme overfitting, validating the chosen hyperparameters and architecture.
+The Artificial Neural Network achieved solid performance on the California Housing dataset. The **RÂ² score of 0.6413** indicates that approximately 64.13% of the variance in the median house value can be explained by our model's features. This signifies a strong predictive relationship between the input demographic/geographic features and house prices. Additionally, the **MAE of 49183.29** tells us that on average, the model's predicted median house value is off by roughly this dollar amount from the actual value. Given that California house prices commonly range in the hundreds of thousands, this error margin provides a practical understanding of the model's day-to-day prediction accuracy. Overall, the network successfully learned the underlying patterns and generalized well to unseen data without extreme overfitting, validating the chosen hyperparameters and architecture.
