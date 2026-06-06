@@ -1,5 +1,4 @@
 # California Housing Prices ANN Regression
-**Author:** Antigravity (Data Scientist Agent)
 **Date Started:** 2026-06-06
 
 This is an append-only development log and project report. All configurations, execution steps, and decisions will be documented chronologically.
